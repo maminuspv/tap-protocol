@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package tap.v1;
+
+message ThermodynamicState {
+  bool ground_state_verified = 1;
+  int32 staked_energy_collateral = 2;
+  float cumulative_shear_stress = 3;
+  float free_volume_ratio = 4;
+}
+
+message Header {
+  string tap_version = 1;
+  string sender_id = 2;
+  string receiver_id = 3;
+  string session_id = 4;
+  ThermodynamicState thermodynamic_state = 5;
+}
+
+message ResourceRequest {
+  int32 max_context_tokens = 1;
+  string compute_precision = 2;
+  int32 timeout_ms = 3;
+}
+
+message ProposalRequest {
+  Header header = 1;
+  string contract_type = 2;
+  ResourceRequest resource_request = 3;
+  bytes payload = 4;
+  float payload_utility_density = 5;
+}
+
+message ProposalResponse {
+  string status = 1;
+  string reason = 2;
+  int32 collateral_returned = 3;
+  int32 earned_yield = 4;
+  float current_shear_score = 5;
+}
+
+service TAPService {
+  rpc SubmitProposal (ProposalRequest) returns (ProposalResponse);
+}
