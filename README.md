@@ -4,6 +4,7 @@
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![gRPC](https://img.shields.io/badge/gRPC-v1.50+-green.svg)](https://grpc.io/)
 [![arXiv](https://img.shields.io/badge/arXiv-2609.XXXXX-b31b1b.svg)](https://arxiv.org/)
+[![DOI](https://zenodo.org/badge/1386825649.svg)](https://doi.org/10.5281/zenodo.22968150)
 
 > **A physics-informed middleware protocol enforcing thermodynamic equilibrium and preventing parasitic free-riding in distributed multi-agent AI networks.**
 
